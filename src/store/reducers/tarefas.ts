@@ -20,7 +20,7 @@ const initialState: TarefasState = {
       descricao: 'Estudar  material de apoio',
       prioridade: enums.Prioridade.NORMAL,
       status: enums.Status.PENDENTE,
-      titulo: 'Estudar javaScript'
+      titulo: 'Estudar java'
     },
     {
       id: 3,
@@ -47,10 +47,21 @@ const tarefasSlice = createSlice({
       if (indexDaTarefa >= 0) {
         state.itens[indexDaTarefa] = action.payload
       }
+    },
+    cadastrar: (state, action: PayloadAction<Tarefa>) => {
+      const tarefaJaExiste = state.itens.find(
+        (tarefa) =>
+          tarefa.titulo.toLowerCase() === action.payload.titulo.toLowerCase()
+      )
+      if (tarefaJaExiste) {
+        alert('ja tem uma tarefa com este nome!!')
+      } else {
+        state.itens.push(action.payload)
+      }
     }
   }
 })
 
-export const { remover, editar } = tarefasSlice.actions
+export const { remover, editar, cadastrar } = tarefasSlice.actions
 
 export default tarefasSlice.reducer
