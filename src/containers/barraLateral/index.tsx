@@ -30,36 +30,26 @@ const BarraLateral = ({ mostrarFiltros }: Props) => {
 
             <S.Filtros>
               <FiltroCard
-                valor={enums.Status.PENDENTE}
-                criterio="status"
-                legenda="pendentes"
-              />
-              <FiltroCard
-                valor={enums.Status.CONCLUIDA}
-                criterio="status"
-                legenda="concluídas"
-              />
-              <FiltroCard
                 valor={enums.Prioridade.URGENTE}
                 criterio="prioridade"
-                legenda="urgentes"
+                legenda="Trabalho"
               />
               <FiltroCard
                 valor={enums.Prioridade.IMPORTANTE}
                 criterio="prioridade"
-                legenda="importantes"
+                legenda="Familia"
               />
               <FiltroCard
                 valor={enums.Prioridade.NORMAL}
                 criterio="prioridade"
                 legenda="normal"
               />
-              <FiltroCard criterio="todas" legenda="todas" />
+              <FiltroCard criterio="todas" legenda="Todos" />
             </S.Filtros>
           </>
         ) : (
           <Botao onClick={() => navigate('/')} type="button">
-            Voltar a lista de tarefa
+            Voltar para lista telefônica
           </Botao>
         )}
       </div>

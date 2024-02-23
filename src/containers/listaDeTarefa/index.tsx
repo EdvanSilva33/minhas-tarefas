@@ -37,9 +37,9 @@ const ListaDeTarefas = () => {
       termo !== undefined && termo.length > 0 ? `e "${termo}"` : ''
 
     if (criterio === 'todas') {
-      mensagem = `${quantidade} tarefa(s) encontrada(s) como todas ${complementacao}`
+      mensagem = `${quantidade} Telefone(s) encontrado(s) como Todos ${complementacao}`
     } else {
-      mensagem = ` ${quantidade} tarefa(s) encontrada(s) como:"${`${criterio}=${valor}`}"
+      mensagem = ` ${quantidade} Telefone(s) encontrado(s) como:"${` ${valor}`}"
       ${complementacao}`
     }
     return mensagem
@@ -60,6 +60,7 @@ const ListaDeTarefas = () => {
               descricao={t.descricao}
               titulo={t.titulo}
               status={t.status}
+              email={t.email}
               prioridade={t.prioridade}
             />
           </li>

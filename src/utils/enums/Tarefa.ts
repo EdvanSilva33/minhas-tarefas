@@ -1,7 +1,7 @@
 export enum Prioridade {
-  URGENTE = 'urgente',
-  IMPORTANTE = 'importante',
-  NORMAL = 'normal'
+  URGENTE = 'Trabalho',
+  IMPORTANTE = 'Familia',
+  NORMAL = 'Normal'
 }
 
 export enum Status {

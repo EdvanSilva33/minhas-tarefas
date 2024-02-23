@@ -6,9 +6,9 @@ type Props = {
 
 export const Card = styled.div<Props>`
   padding: 10px;
-  border: 1px solid ${(props) => (props.ativo ? '#1e90ff' : '#a1a1a1')};
+  border: 1px solid ${(props) => (props.ativo ? '#e31818' : '#a1a1a1')};
   background-color: ${(props) => (props.ativo ? '#fff' : '#fcfcfc')};
-  color: ${(props) => (props.ativo ? '#1e90ff' : '#5e5e5e')};
+  color: ${(props) => (props.ativo ? '#e31818' : '#5e5e5e')};
   border-radius: 8px;
   cursor: pointer;
 `

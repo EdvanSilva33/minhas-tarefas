@@ -19,7 +19,7 @@ function retornaCorDeFundo(props: TagProps): string {
     if (props.status === enums.Status.CONCLUIDA) return variaveis.verde
   }
 
-  return '#ccc'
+  return '#000'
 }
 // este codigo e mesmo o de baixo
 
@@ -37,25 +37,40 @@ export const Card = styled.div`
 `
 
 export const Titulo = styled.h3`
-  font-size: 18px;
+  font-size: 22px;
   font-weight: bold;
   margin-left: 8px;
+  text-transform: capitalize;
 `
 
 export const Tag = styled.span<TagProps>`
-  padding: 4px 8px;
-  font-size: 10px;
+  padding: 6px 10px;
+  font-size: 12px;
   color: #fff;
   font-weight: bold;
   background-color: ${(props) => retornaCorDeFundo(props)};
   border-radius: 8px;
   margin-right: 16px;
+  margin-bottom: 10px;
   display: inline-block;
 `
 
 export const Descricao = styled.textarea`
-  color: #8b8b8b;
-  font-size: 14px;
+  color: #a908e8;
+  font-size: 18px;
+  line-height: 24px;
+  font-family: 'Roboto Mono', monospace;
+  display: block;
+  width: 100%;
+  margin-bottom: 16px;
+  margin-top: 16px;
+  resize: none;
+  border: none;
+  background-color: transparent;
+`
+export const Email = styled.textarea`
+  color: #a908e8;
+  font-size: 18px;
   line-height: 24px;
   font-family: 'Roboto Mono', monospace;
   display: block;
@@ -74,4 +89,14 @@ export const BarraAcoes = styled.div`
 
 export const BotaoCancelarRemover = styled(Botao)`
   background-color: ${variaveis.vermelho};
+`
+export const Nomes = styled.label`
+  margin-top: 16px;
+  font-size: 22px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #020020;
+  font-family: 'Protest Strike', sans-serif;
+
+  font-style: normal;
 `

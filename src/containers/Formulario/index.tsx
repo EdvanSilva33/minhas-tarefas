@@ -12,6 +12,7 @@ const Formulario = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const [titulo, setTitulo] = useState('')
+  const [email, setEmail] = useState('')
   const [descricao, setDescricao] = useState('')
   const [prioridade, setPrioridade] = useState(enums.Prioridade.NORMAL)
 
@@ -23,6 +24,7 @@ const Formulario = () => {
         titulo,
         prioridade,
         descricao,
+        email,
         status: enums.Status.PENDENTE
       })
     )
@@ -31,22 +33,28 @@ const Formulario = () => {
 
   return (
     <MainContainer>
-      <Titulo>Nova tarefas</Titulo>
+      <Titulo>Cadastro de Lista de Contato</Titulo>
       <Form onSubmit={cadastrarTarefa}>
         <Campo
           value={titulo}
           onChange={(evento) => setTitulo(evento.target.value)}
           type="text"
-          placeholder="Titulo"
+          placeholder="Nome:"
+        />
+        <Campo
+          value={email}
+          onChange={(evento) => setEmail(evento.target.value)}
+          type="email"
+          placeholder="E-mail:"
         />
         <Campo
           value={descricao}
           onChange={({ target }) => setDescricao(target.value)}
-          as="textarea"
-          placeholder="Descrição"
+          type="number"
+          placeholder="(00) 0 0000 0000 "
         />
         <Opcoes>
-          <p>Prioridade</p>
+          <p>Categoria</p>
           {Object.values(enums.Prioridade).map((prioridade) => (
             <Opcao key={prioridade}>
               <input

@@ -10,24 +10,27 @@ const initialState: TarefasState = {
   itens: [
     {
       id: 1,
-      descricao: 'Estudar javaScript revendo os trabalhos 7',
+      descricao: '(61) 3374 7858',
+      email: 'carlos@gmail.com',
       prioridade: enums.Prioridade.NORMAL,
       status: enums.Status.CONCLUIDA,
-      titulo: 'Estudar javaScript'
+      titulo: 'Carlos Eduardo'
     },
     {
       id: 2,
-      descricao: 'Estudar  material de apoio',
-      prioridade: enums.Prioridade.NORMAL,
+      descricao: '(34) 9 8456 - 9685',
+      email: 'carlos@gmail.com',
+      prioridade: enums.Prioridade.URGENTE,
       status: enums.Status.PENDENTE,
-      titulo: 'Estudar java'
+      titulo: 'Manuel Tavares'
     },
     {
       id: 3,
-      descricao: 'Vamos estudar Python',
+      descricao: '(71) 6989 6987',
+      email: 'carlos@gmail.com',
       prioridade: enums.Prioridade.IMPORTANTE,
       status: enums.Status.PENDENTE,
-      titulo: 'Estudar Magica respostas'
+      titulo: 'Renata Gomes'
     }
   ]
 }

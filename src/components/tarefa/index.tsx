@@ -1,11 +1,10 @@
-import { ChangeEvent, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import * as S from './styles'
 import { useDispatch } from 'react-redux'
 
-import { remover, editar, alteraStatus } from '../../store/reducers/tarefas'
+import { remover, editar } from '../../store/reducers/tarefas'
 import TarefaClass from '../../models/Tarefa'
 import { Botao, BotaoSalvar } from '../../styles'
-import * as enums from '../../utils/enums/Tarefa'
 
 type Props = TarefaClass
 
@@ -14,6 +13,7 @@ const Tarefa = ({
   prioridade,
   status,
   titulo,
+  email,
   id
 }: Props) => {
   const dispatch = useDispatch()
@@ -31,23 +31,11 @@ const Tarefa = ({
     setEstaEditando(false)
     setDescricao(descricaoOriginal)
   }
-  function alterarStatusTarefa(evento: ChangeEvent<HTMLInputElement>) {
-    dispatch(
-      alteraStatus({
-        id,
-        finalizado: evento.target.checked
-      })
-    )
-  }
+
   return (
     <S.Card>
       <label htmlFor={titulo}>
-        <input
-          type="checkbox"
-          id={titulo}
-          checked={status === enums.Status.CONCLUIDA}
-          onChange={alterarStatusTarefa}
-        />
+        <S.Nomes>Nome:</S.Nomes>
         <S.Titulo>
           {estaEditando && <em>Editando:</em>}
 
@@ -57,14 +45,20 @@ const Tarefa = ({
       <S.Tag parametro="prioridade" prioridade={prioridade}>
         {prioridade}
       </S.Tag>
-      <S.Tag parametro="status" status={status}>
-        {status}
-      </S.Tag>
+
+      <S.Nomes>Telefone:</S.Nomes>
       <S.Descricao
         disabled={!estaEditando}
         value={descricao}
         onChange={(evento) => setDescricao(evento.target.value)}
       />
+      <S.Nomes>E -mail:</S.Nomes>
+      <S.Email
+        disabled={!estaEditando}
+        value={email}
+        onChange={(evento) => setDescricao(evento.target.value)}
+      />
+
       <S.BarraAcoes>
         {estaEditando ? (
           <>
@@ -76,6 +70,7 @@ const Tarefa = ({
                     prioridade,
                     status,
                     titulo,
+                    email,
                     id
                   })
                 )
